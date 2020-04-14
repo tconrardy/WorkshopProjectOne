@@ -24,6 +24,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        margin-top: 100%;
       }
 
       #story1 {
@@ -31,29 +32,33 @@
       }
 
       /* HORIZONTAL */
-      body {
-        background-image: url('HorizontalCropped.png');
-        background-position: left center;
-      }
-      .belt {
-        margin-left: 40%;
-        /* margin-top: 10%; */
-        flex-direction: row;
-      }
+      @media screen and (orientation:landscape) {
+        body {
+          background-image: url('HorizontalCropped.png');
+          background-position: left center;
+        }
+        .belt {
+          margin-left: 50%;
+          /* The above makes zero sense to me */
+          flex-direction: row;
+          width: 4000%
+        }
 
-      .beltitem {
-        max-height: 40%;
-        /* Why does the above not
-        limit the height of the items? */
-        margin: auto;
-        padding-left: 2%;
-        padding-right: 2%;
-        padding-top: .05%;
-        padding-bottom: .05%;
-        background-color: #0000003f;
-        border-radius: 10px;
+        .beltitem {
+          max-height: 40%;
+          max-width: 20%;
+          /* Why does the above not
+          limit the height of the items? */
+          margin: auto;
+          padding-left: .2%;
+          padding-right: .2%;
+          padding-top: .05%;
+          padding-bottom: .05%;
+          background-color: #0000003f;
+          border-radius: 10px;
+          width: 100em;
+        }
       }
-
       /* VERTICAL */
       @media screen and (orientation:portrait) {
         .belt {
@@ -62,6 +67,20 @@
           margin: auto;
           margin-top: 45%
         }
+
+        .beltitem {
+          max-height: 40%;
+          /* Why does the above not
+          limit the height of the items? */
+          margin: auto;
+          padding-left: 2%;
+          padding-right: 2%;
+          padding-top: .05%;
+          padding-bottom: .05%;
+          background-color: #0000003f;
+          border-radius: 10px;
+        }
+
         body {
           background-image: url('VerticalBeltAnimationCropped.png');
           background-position: center top;
